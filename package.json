@@ -1,0 +1,51 @@
+{
+  "name": "broccoli-sassdoc",
+  "title": "Broccoli SassDoc",
+  "version": "0.1.0",
+  "description": "SassDoc compiler for Broccoli",
+  "keywords": [
+    "broccoli-plugin",
+    "sass",
+    "scss",
+    "doc",
+    "documentation"
+  ],
+  "homepage": "https://github.com/SassDoc/broccoli-sassdoc",
+  "bugs": "https://github.com/SassDoc/broccoli-sassdoc/issues",
+  "author": {
+    "name": "Pascal Duez",
+    "url": "https://github.com/pascalduez"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/SassDoc/broccoli-sassdoc.git"
+  },
+  "dependencies": {
+    "broccoli-writer": "^0.1.1",
+    "chalk": "^0.5.1",
+    "lodash": "^2.4.1",
+    "sassdoc": "1.2.0-rc.1"
+  },
+  "devDependencies": {
+    "broccoli": "^0.12.3",
+    "eslint": "^0.7.4",
+    "faucet": "0.0.1",
+    "rimraf": "^2.2.8",
+    "tape": "^2.14.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "main": "index.js",
+  "license": {
+    "type": "unlicence",
+    "url": "http://unlicense.org"
+  },
+  "scripts": {
+    "lint": "eslint *.js test/*-test.js",
+    "build": "rimraf test/docs && broccoli build test/docs",
+    "pretest": "${npm_package_scripts_lint} & npm run-script build",
+    "test": "tape test/*-test.js | faucet",
+    "posttest": "rimraf tmp"
+  }
+}

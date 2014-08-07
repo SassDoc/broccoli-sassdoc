@@ -1,0 +1,6 @@
+.npmignore
+.editorconfig
+.travis.yml
+.eslintrc
+test
+Brocfile.js
