@@ -87,28 +87,31 @@ Following keys will be looked for:
 `description`
 
 
-#### theme <small>(since sassdoc@1.2.0)</small>
+#### theme
 
 Type: `String`  
-Default: `'default'`
+Default: `'default'`  
+Since: `sassdoc@1.2.0`
 
 Name of a custom theme, either a published package or a local one.
 Check the [doc](https://github.com/SassDoc/sassdoc/wiki/Using-Your-Own-Theme) for more infos.
 
 
-#### groups <small>(since sassdoc@1.2.0)</small>
+#### groups
 
 Type: `Object`  
-Default: `{ 'undefined': 'Ungrouped' }`
+Default: `{ 'undefined': 'Ungrouped' }`  
+Since: `sassdoc@1.2.0`
 
 Give friendly names to your groups, if any.
 Check the [doc](https://github.com/SassDoc/sassdoc-filter#group-name) for more infos.
 
 
-#### basePath <small>(since sassdoc@1.2.0)</small>
+#### basePath
 
 Type: `String`  
-Default: `null`
+Default: `null`  
+Since: `sassdoc@1.2.0`
 
 An URL or a path which will be transformed in a link to the source file.
 Check the [doc](https://github.com/SassDoc/sassdoc/wiki/Customising-the-View) for more infos.
