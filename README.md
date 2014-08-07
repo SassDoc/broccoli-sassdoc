@@ -5,6 +5,7 @@
 [SassDoc]: https://github.com/SassDoc/sassdoc
 [Broccoli]: https://github.com/broccolijs/broccoli
 
+
 ## Installation
 
 ```sh
@@ -16,11 +17,12 @@ npm install --save-dev broccoli-sassdoc
 
 ```js
 var sassdoc = require('broccoli-sassdoc');
-var tree = sassdoc(tree, options);
+var docs = sassdoc(tree, options);
 ```
 
 * `tree`: A [broccoli tree](https://github.com/broccolijs/broccoli#plugin-api-specification) or a directory path as a string.
 * `options`: An object of options to pass to SassDoc.
+
 
 ## Options
 
@@ -85,8 +87,7 @@ Following keys will be looked for:
 `description`
 
 
-#### theme <small>*(since sassdoc@1.2.0)*</small>
-
+#### theme <small>(since sassdoc@1.2.0)</small>
 
 Type: `String`  
 Default: `'default'`
@@ -95,7 +96,7 @@ Name of a custom theme, either a published package or a local one.
 Check the [doc](https://github.com/SassDoc/sassdoc/wiki/Using-Your-Own-Theme) for more infos.
 
 
-#### groups <small>*(since sassdoc@1.2.0)*</small>
+#### groups <small>(since sassdoc@1.2.0)</small>
 
 Type: `Object`  
 Default: `{ 'undefined': 'Ungrouped' }`
@@ -104,7 +105,7 @@ Give friendly names to your groups, if any.
 Check the [doc](https://github.com/SassDoc/sassdoc-filter#group-name) for more infos.
 
 
-#### basePath <small>*(since sassdoc@1.2.0)*</small>
+#### basePath <small>(since sassdoc@1.2.0)</small>
 
 Type: `String`  
 Default: `null`
@@ -122,19 +123,19 @@ You should really manage your options in one place._
 
 ```js
 // Bare minimum, using defaults.
-var tree = sassdoc('path/to/sass');
+var docs = sassdoc('path/to/sass');
 ```
 
 ```js
 // Example with external view configuration file.
-var tree = sassdoc('path/to/sass', {
+var docs = sassdoc('path/to/sass', {
     config: 'path/to/view.json'
 });
 ```
 
 ```js
 // Example with passed in options.
-var tree = sassdoc('path/to/sass', {
+var docs = sassdoc('path/to/sass', {
     verbose: true,
     display: {
       access: ['public', 'private'],
