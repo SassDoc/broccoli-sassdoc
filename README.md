@@ -1,7 +1,9 @@
 # broccoli-sassdoc [![npm version](http://img.shields.io/npm/v/broccoli-sassdoc.svg?style=flat)](https://www.npmjs.org/package/broccoli-sassdoc) [![Build Status: Linux](http://img.shields.io/travis/SassDoc/broccoli-sassdoc.svg?style=flat)](https://travis-ci.org/SassDoc/broccoli-sassdoc?branch=master)
 
-> [SassDoc](https://github.com/SassDoc/sassdoc) compiler for Broccoli.
+> [SassDoc] compiler for [Broccoli].
 
+[SassDoc]: https://github.com/SassDoc/sassdoc
+[Broccoli]: https://github.com/broccolijs/broccoli
 
 ## Installation
 
@@ -14,10 +16,11 @@ npm install --save-dev broccoli-sassdoc
 
 ```js
 var sassdoc = require('broccoli-sassdoc');
-
-var tree = sassdoc('path/to/sass', options);
+var tree = sassdoc(tree, options);
 ```
 
+* `tree`: A [broccoli tree](https://github.com/broccolijs/broccoli#plugin-api-specification) or a directory path as a string.
+* `options`: An object of options to pass to SassDoc.
 
 ## Options
 
@@ -82,7 +85,7 @@ Following keys will be looked for:
 `description`
 
 
-#### theme <span style="font-size: .7em">*(since sassdoc@1.2.0)*</span>
+#### theme <small>*(since sassdoc@1.2.0)*</small>
 
 
 Type: `String`  
@@ -92,7 +95,7 @@ Name of a custom theme, either a published package or a local one.
 Check the [doc](https://github.com/SassDoc/sassdoc/wiki/Using-Your-Own-Theme) for more infos.
 
 
-#### groups <span style="font-size: .7em">*(since sassdoc@1.2.0)*</span>
+#### groups <small>*(since sassdoc@1.2.0)*</small>
 
 Type: `Object`  
 Default: `{ 'undefined': 'Ungrouped' }`
@@ -101,7 +104,7 @@ Give friendly names to your groups, if any.
 Check the [doc](https://github.com/SassDoc/sassdoc-filter#group-name) for more infos.
 
 
-#### basePath <span style="font-size: .7em">*(since sassdoc@1.2.0)*</span>
+#### basePath <small>*(since sassdoc@1.2.0)*</small>
 
 Type: `String`  
 Default: `null`
@@ -110,8 +113,8 @@ An URL or a path which will be transformed in a link to the source file.
 Check the [doc](https://github.com/SassDoc/sassdoc/wiki/Customising-the-View) for more infos.
 
 
-_**Heads up**: If a config file is passed and found, its options will prevail over defauts.
-Additionnal options passed to the grunt task, will complement it but not override it.
+_**Heads up**: If a config file is passed and found, its options will prevail over defaults.
+Additional options passed to the Broccoli build, will complement it but not override it.
 You should really manage your options in one place._
 
 
@@ -125,7 +128,6 @@ var tree = sassdoc('path/to/sass');
 ```js
 // Example with external view configuration file.
 var tree = sassdoc('path/to/sass', {
-    verbose: true,
     config: 'path/to/view.json'
 });
 ```
