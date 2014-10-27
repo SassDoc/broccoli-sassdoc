@@ -1,7 +1,7 @@
 {
   "name": "broccoli-sassdoc",
   "title": "Broccoli SassDoc",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "SassDoc compiler for Broccoli",
   "keywords": [
     "broccoli-plugin",
