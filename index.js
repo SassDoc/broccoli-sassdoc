@@ -1,4 +1,4 @@
-/*
+/**
  * broccoli-sassdoc
  *
  * unlicenced
@@ -8,80 +8,29 @@
 'use strict';
 
 var Writer = require('broccoli-writer');
-var fs = require('fs');
-var path = require('path');
 var sassdoc = require('sassdoc');
-var chalk = require('chalk');
-var _ = require('lodash');
+var ensure = require('lodash').assign;
 
-
-function fileExists() {
-  var filePath = path.join.apply(path, arguments);
-  return fs.existsSync(filePath);
-}
-
-
-function loadJSON(filePath) {
-  if (!fileExists(filePath)) {
-    console.log('Source file "' + chalk.cyan(filePath) + '" not found.');
-    return false;
-  }
-  else {
-    return require(path.join(process.cwd(), filePath));
-  }
-}
-
-
-function handleOptions(options) {
+function cfg() {
   // Defaults.
-  options = _.assign({
-    verbose: false,
-    config: null,
-    display: {
-      access: ['public', 'private'],
-      alias: false,
-      watermark: true
-    },
-    groups: {
-      'undefined': 'Ungrouped'
-    },
-    package: null,
-    theme: 'default',
-    basePath: null,
-    force: false,
-    interactive: true
-  }, options);
+  var options = ensure(this.options, {
+    noUpdateNotifier: true
+  });
 
-  // If a config file is passed and found,
-  // its options will prevail over defauts.
-  if (options.config) {
-    var config = loadJSON(options.config);
+  // Instantiate a new SassDoc Logger.
+  var logger = new sassdoc.Logger(options.verbose);
 
-    if (config) {
-      options = _.assign(options, config);
-    }
-  }
+  // Load raw configuration.
+  var config = sassdoc.cfg.pre(options.config, logger);
 
-  // If a package path is passed try to load the file.
-  if (_.isString(options.package)) {
-    options.package = loadJSON(options.package);
-  }
-  // If options.package is not usable, delete it.
-  if (!_.isPlainObject(options.package) || _.isEmpty(options.package)) {
-    options = _.omit(options, 'package');
-  }
+  // Ensure that options take precedence over configuration values.
+  ensure(config, options);
 
-  // Enable SassDoc logger.
-  if (options.verbose) {
-    sassdoc.logger.enabled = true;
-  }
+  // Post process configuration.
+  sassdoc.cfg.post(config);
 
-  // Clean options not expected by SassDoc.
-  options = _.omit(options, ['verbose', 'config']);
-
-  return options;
+  return config;
 }
-
 
 function SassDocCompile(inputTree, options) {
   if (!(this instanceof SassDocCompile)) {
@@ -97,22 +46,19 @@ SassDocCompile.prototype.constructor = SassDocCompile;
 SassDocCompile.prototype.description = 'Generates SassDoc documentation';
 
 SassDocCompile.prototype.write = function (readTree, destDir) {
-  var options = handleOptions(this.options);
+  var config = cfg.call(this);
 
   return readTree(this.inputTree).then(function (srcDir) {
 
-    return sassdoc
-      .documentize(srcDir, destDir, options)
+    return sassdoc.documentize(srcDir, destDir, config)
       .then(function () {
         console.log('SassDoc documentation successfully generated.');
-      })
-      .catch(function (err) {
+      }, function (err) {
         throw err;
       });
 
   });
 
 };
-
 
 module.exports = SassDocCompile;
