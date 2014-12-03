@@ -1,0 +1,13 @@
+{
+  "display": {
+    "access": ["public", "private"],
+    "alias": true,
+    "watermark": true
+  },
+  "groups": {
+    "undefined": "Ungrouped"
+  },
+  "package": "package.json",
+  "theme": "default",
+  "basePath": "https://github.com/SassDoc/broccoli-sassdoc/tree/master/test/fixture"
+}

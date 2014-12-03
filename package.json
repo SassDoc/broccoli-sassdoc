@@ -43,10 +43,10 @@
   },
   "scripts": {
     "rebuild": "rm -rf node_modules && npm install",
-    "lint": "eslint *.js test/*-test.js",
+    "lint": "eslint *.js test/*.test.js",
     "build": "rimraf test/docs && broccoli build test/docs",
     "pretest": "${npm_package_scripts_lint} & npm run-script build",
-    "test": "tape test/*-test.js | faucet",
+    "test": "tape test/*.test.js | faucet",
     "posttest": "rimraf tmp"
   }
 }
