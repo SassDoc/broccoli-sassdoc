@@ -29,7 +29,6 @@
   ],
   "dependencies": {
     "broccoli-writer": "^0.1.1",
-    "chalk": "^0.5.1",
     "lodash": "^2.4.1",
     "sassdoc": "^2.0.0-rc.6"
   },
