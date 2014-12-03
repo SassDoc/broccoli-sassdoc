@@ -20,6 +20,13 @@
     "type": "git",
     "url": "git://github.com/SassDoc/broccoli-sassdoc.git"
   },
+  "main": "index.js",
+  "files": [
+    "CHANGELOG.md",
+    "index.js",
+    "README.md",
+    "UNLICENSE"
+  ],
   "dependencies": {
     "broccoli-writer": "^0.1.1",
     "chalk": "^0.5.1",
@@ -36,7 +43,6 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "main": "index.js",
   "license": {
     "type": "unlicence",
     "url": "http://unlicense.org"
