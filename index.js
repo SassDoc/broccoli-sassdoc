@@ -11,7 +11,7 @@ var Writer = require('broccoli-writer');
 var sassdoc = require('sassdoc');
 var ensure = require('lodash').assign;
 
-function cfg() {
+function environment() {
   // Defaults.
   var options = ensure(this.options, {
     noUpdateNotifier: true
@@ -20,16 +20,20 @@ function cfg() {
   // Instantiate a new SassDoc Logger.
   var logger = new sassdoc.Logger(options.verbose);
 
-  // Load raw configuration.
-  var config = sassdoc.cfg.pre(options.config, logger);
+  // Instantiate a new SassDoc Environment.
+  var env = new sassdoc.Environment(logger, options.strict);
+
+  env.on('error', console.error);
+
+  // Load and process config file, if any.
+  env.load(options.config);
 
   // Ensure that options take precedence over configuration values.
-  ensure(config, options);
+  ensure(env, options);
 
-  // Post process configuration.
-  sassdoc.cfg.post(config);
+  env.postProcess();
 
-  return config;
+  return env;
 }
 
 function SassDocCompile(inputTree, options) {
@@ -46,11 +50,11 @@ SassDocCompile.prototype.constructor = SassDocCompile;
 SassDocCompile.prototype.description = 'Generates SassDoc documentation';
 
 SassDocCompile.prototype.write = function (readTree, destDir) {
-  var config = cfg.call(this);
+  var env = environment.call(this);
 
   return readTree(this.inputTree).then(function (srcDir) {
 
-    return sassdoc.documentize(srcDir, destDir, config)
+    return sassdoc.documentize(srcDir, destDir, env)
       .then(function () {
         console.log('SassDoc documentation successfully generated.');
       }, function (err) {
