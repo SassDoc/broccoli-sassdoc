@@ -48,8 +48,8 @@ function handleOptions(options) {
     package: null,
     theme: 'default',
     basePath: null,
-    force: false,
-    interactive: true
+    force: true,
+    interactive: false
   }, options);
 
   // If a config file is passed and found,
