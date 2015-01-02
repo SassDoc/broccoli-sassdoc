@@ -1,7 +1,7 @@
 {
   "name": "broccoli-sassdoc",
   "title": "Broccoli SassDoc",
-  "version": "2.0.0-rc.2",
+  "version": "2.0.0-rc.3",
   "description": "SassDoc compiler for Broccoli",
   "keywords": [
     "broccoli-plugin",
@@ -30,7 +30,7 @@
   "dependencies": {
     "broccoli-writer": "^0.1.1",
     "lodash.assign": "^2.4.1",
-    "sassdoc": "^2.0.0-rc.8"
+    "sassdoc": "^2.0.0-rc.9"
   },
   "devDependencies": {
     "broccoli": "^0.13.3",
