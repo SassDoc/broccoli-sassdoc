@@ -30,14 +30,14 @@
     "broccoli-writer": "^0.1.1",
     "chalk": "^0.5.1",
     "lodash": "^2.4.1",
-    "sassdoc": "1.2.0-rc.1"
+    "sassdoc": "^1.10.11"
   },
   "devDependencies": {
-    "broccoli": "^0.12.3",
-    "eslint": "^0.7.4",
+    "broccoli": "^0.13.3",
+    "eslint": "^0.11.0",
     "faucet": "0.0.1",
     "rimraf": "^2.2.8",
-    "tape": "^2.14.0"
+    "tape": "^3.0.3"
   },
   "engines": {
     "node": ">=0.10.0"
