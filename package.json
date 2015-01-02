@@ -20,6 +20,12 @@
     "type": "git",
     "url": "git://github.com/SassDoc/broccoli-sassdoc.git"
   },
+  "files": [
+    "CHANGELOG.md",
+    "index.js",
+    "README.md",
+    "UNLICENSE"
+  ],
   "dependencies": {
     "broccoli-writer": "^0.1.1",
     "chalk": "^0.5.1",
