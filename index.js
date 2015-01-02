@@ -14,7 +14,9 @@ var ensure = require('lodash').assign;
 function environment() {
   // Defaults.
   var options = ensure(this.options, {
-    noUpdateNotifier: true
+    noUpdateNotifier: true,
+    force: true,
+    interactive: false
   });
 
   // Instantiate a new SassDoc Logger.
