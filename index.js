@@ -9,7 +9,7 @@
 
 var Writer = require('broccoli-writer');
 var sassdoc = require('sassdoc');
-var ensure = require('lodash').assign;
+var ensure = require('lodash.assign');
 
 function environment() {
   // Defaults.
