@@ -30,11 +30,11 @@
   "dependencies": {
     "broccoli-writer": "^0.1.1",
     "lodash.assign": "^2.4.1",
-    "sassdoc": "^2.0.0-rc.9"
+    "sassdoc": "^2.0.0-rc.16"
   },
   "devDependencies": {
     "broccoli": "^0.13.3",
-    "eslint": "^0.10.0",
+    "eslint": "^0.11.0",
     "faucet": "0.0.1",
     "rimraf": "^2.2.8",
     "tape": "^3.0.3"
@@ -49,7 +49,7 @@
   "scripts": {
     "rebuild": "rm -rf node_modules && npm install",
     "lint": "eslint *.js test/*.test.js",
-    "build": "rimraf test/docs && broccoli build test/docs",
+    "build": "rimraf sassdoc && broccoli build sassdoc",
     "pretest": "${npm_package_scripts_lint} & npm run-script build",
     "test": "tape test/*.test.js | faucet",
     "posttest": "rimraf tmp"
