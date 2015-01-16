@@ -52,6 +52,6 @@
     "build": "rimraf sassdoc && broccoli build sassdoc",
     "pretest": "${npm_package_scripts_lint} & npm run-script build",
     "test": "tape test/*.test.js | faucet",
-    "posttest": "rimraf tmp"
+    "posttest": "rimraf tmp sassdoc"
   }
 }
