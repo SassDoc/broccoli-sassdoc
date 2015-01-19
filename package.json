@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "broccoli": "^0.13.3",
-    "eslint": "^0.11.0",
+    "eslint": "^0.12.0",
     "faucet": "0.0.1",
     "rimraf": "^2.2.8",
     "tape": "^3.0.3"
