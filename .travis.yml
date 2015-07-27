@@ -8,3 +8,5 @@ before_install:
 
 before_script:
   - npm install -g broccoli-cli
+  
+sudo: false
