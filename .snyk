@@ -1,0 +1,21 @@
+version: v1.5.0
+ignore: {}
+patch:
+  'npm:minimatch:20160620':
+    - sassdoc > minimatch:
+        patched: '2016-08-08T12:28:20.340Z'
+    - sassdoc > vinyl-fs > glob-stream > minimatch:
+        patched: '2016-08-08T12:28:20.340Z'
+    - sassdoc > vinyl-fs > glob-stream > glob > minimatch:
+        patched: '2016-08-08T12:28:20.340Z'
+    - sassdoc > sassdoc-theme-default > html-minifier > cli > glob > minimatch:
+        patched: '2016-08-08T12:28:20.340Z'
+    - sassdoc > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2016-08-08T12:28:20.340Z'
+    - sassdoc > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2016-08-08T12:28:20.340Z'
+  'npm:uglify-js:20151024':
+    - sassdoc > sassdoc-theme-default > html-minifier > uglify-js:
+        patched: '2016-08-08T12:28:20.340Z'
+    - sassdoc > sassdoc-theme-default > swig > uglify-js:
+        patched: '2016-08-08T12:28:20.340Z'
