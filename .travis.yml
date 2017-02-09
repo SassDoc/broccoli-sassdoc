@@ -1,12 +1,15 @@
 language: node_js
 
 node_js:
-  - "0.10"
+  - '4'
+  - '6'
+  - 'stable'
 
 before_install:
-  - npm install -g npm
-
-before_script:
+  - npm i npm@latest -g
   - npm install -g broccoli-cli
-  
+
 sudo: false
+
+git:
+  depth: 10
