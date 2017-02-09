@@ -28,6 +28,7 @@
     "UNLICENSE"
   ],
   "dependencies": {
+    "broccoli": "^0.16.9",
     "broccoli-writer": "^0.1.1",
     "lodash.assign": "^4.2.0",
     "sassdoc": "^2.0.0"
@@ -45,8 +46,8 @@
   "engines": {
     "node": ">=0.10.0"
   },
- "license": "Unlicense",
- "scripts": {
+  "license": "Unlicense",
+  "scripts": {
     "rebuild": "rm -rf node_modules && npm install",
     "lint": "eslint *.js test/*.test.js",
     "build": "rimraf sassdoc && broccoli build sassdoc",
