@@ -1,5 +1,7 @@
 # broccoli-sassdoc [![npm version](http://img.shields.io/npm/v/broccoli-sassdoc.svg?style=flat)](https://www.npmjs.org/package/broccoli-sassdoc) [![Build Status: Linux](http://img.shields.io/travis/SassDoc/broccoli-sassdoc.svg?style=flat)](https://travis-ci.org/SassDoc/broccoli-sassdoc?branch=master)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/SassDoc/broccoli-sassdoc.svg)](https://greenkeeper.io/)
+
 > [SassDoc] compiler for [Broccoli].
 
 [SassDoc]: https://github.com/SassDoc/sassdoc
