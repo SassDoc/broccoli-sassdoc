@@ -14,7 +14,7 @@ var ensure = require('lodash.assign');
 function environment() {
   // Defaults.
   var options = ensure(this.options, {
-    noUpdateNotifier: true
+    noUpdateNotifier: true,
   });
 
   // Instantiate a new SassDoc Logger.
@@ -54,16 +54,13 @@ SassDocCompile.prototype.write = function (readTree, destDir) {
   env.dest = destDir;
 
   return readTree(this.inputTree).then(function (srcDir) {
-
     return sassdoc(srcDir, env)
       .then(function () {
         console.log('SassDoc documentation successfully generated.');
       }, function (err) {
         throw err;
       });
-
   });
-
 };
 
 module.exports = SassDocCompile;

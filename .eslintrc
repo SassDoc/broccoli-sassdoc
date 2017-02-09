@@ -1,13 +1,12 @@
-{
-  "env": {
-    "browser": false,
-    "node": true,
-    "amd": false,
-    "mocha": false
-  },
+---
+extends: "standard"
+root: true
+env:
+  mocha: true
 
-  "rules": {
-    "no-global-strict": 0,
-    "quotes": "single"
-  }
-}
+rules:
+  semi: [2, "always"]
+  comma-dangle: [2, "always-multiline"]
+  space-before-function-paren: [2, {
+    "anonymous": "always",
+    "named": "never" }]

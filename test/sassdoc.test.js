@@ -20,5 +20,4 @@ test('sassdoc', function (assert) {
     fs.existsSync('sassdoc/assets'),
     'Should dump SassDocs assets'
   );
-
 });
