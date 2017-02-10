@@ -31,7 +31,8 @@
     "broccoli": "^0.16.9",
     "broccoli-writer": "^0.1.1",
     "lodash.assign": "^4.2.0",
-    "sassdoc": "^2.0.0"
+    "sassdoc": "^2.0.0",
+    "snyk": "^1.25.0"
   },
   "devDependencies": {
     "broccoli": "^1.1.0",
@@ -53,6 +54,9 @@
     "build": "rimraf sassdoc && broccoli build sassdoc",
     "pretest": "${npm_package_scripts_lint} & npm run-script build",
     "test": "tape test/*.test.js | faucet",
-    "posttest": "rimraf tmp sassdoc"
-  }
+    "posttest": "rimraf tmp sassdoc",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
