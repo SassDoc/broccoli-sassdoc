@@ -1,3 +1,3 @@
-'use strict';
+'use strict'
 
-module.exports = require('./')('test/fixture');
+module.exports = require('./')('test/fixture')
