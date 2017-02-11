@@ -1,8 +1,6 @@
 ---
 extends: "standard"
 root: true
-env:
-  mocha: true
 
 rules:
   semi: [2, "always"]
