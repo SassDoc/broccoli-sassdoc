@@ -35,12 +35,9 @@
   },
   "devDependencies": {
     "broccoli": "^1.1.0",
-    "eslint": "^3.15.0",
-    "eslint-config-standard": "^7.0.0-beta.0",
-    "eslint-plugin-promise": "^3.4.1",
-    "eslint-plugin-standard": "^2.0.1",
     "faucet": "0.0.1",
     "rimraf": "^2.2.8",
+    "standard": "^8.6.0",
     "tape": "^4.6.3"
   },
   "engines": {
@@ -49,7 +46,7 @@
   "license": "Unlicense",
   "scripts": {
     "rebuild": "rm -rf node_modules && npm install",
-    "lint": "eslint *.js test/*.test.js",
+    "lint": "standard *.js test/*.test.js",
     "build": "rimraf sassdoc && broccoli build sassdoc",
     "pretest": "${npm_package_scripts_lint} & npm run-script build",
     "test": "tape test/*.test.js | faucet",
