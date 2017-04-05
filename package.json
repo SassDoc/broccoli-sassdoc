@@ -37,7 +37,7 @@
     "broccoli": "^1.1.0",
     "faucet": "0.0.1",
     "rimraf": "^2.2.8",
-    "standard": "^9.0.0",
+    "standard": "^10.0.0",
     "tape": "^4.6.3"
   },
   "engines": {
