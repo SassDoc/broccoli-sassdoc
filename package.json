@@ -34,7 +34,7 @@
     "sassdoc": "^2.0.0"
   },
   "devDependencies": {
-    "broccoli": "^1.1.0",
+    "broccoli": "^1.1.2",
     "faucet": "0.0.1",
     "rimraf": "^2.2.8",
     "standard": "^10.0.0",
